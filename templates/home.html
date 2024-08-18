@@ -1,0 +1,290 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>e-Tender</title>
+        <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  rel="stylesheet"
+/>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+    </head>
+
+    <body>
+      <div class="container" >
+        <div class="row mt-2">
+            <div class="col-2">
+                <img src="data:image/jpeg;base64,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" class="rounded float-start" alt="..." height="150">
+            </div>
+            <div class="col-5 mt-2 ml-0">
+                <h1>e-Tender Portal</h1>
+                <h5>Revolutionizing Procurement, One Click at a Time.</h5>
+            </div>
+            <div class="col mt-3 ">
+                <div class="row">
+                  <div class="col ml-3 mr-3">
+                    <a class="btn btn-primary" href="{% url 'register' %}">Register</a>
+                </div>
+                <div class="col ml-3 mr-3">
+                      <a href="{% url 'loginadmin' %}" class="btn btn-primary">Login for admin</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar bg-body-secondary border-bottom border-body" data-bs-theme="dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">Home</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="#">Contact Us</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  More info.
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Ongoing tenders</a></li>
+                  <li><a class="dropdown-item" href="#">Upcoming Tenders</a></li>
+                  <li><a class="dropdown-item" href="#">News</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+</header>
+<main>
+    <div class="container mt-3">
+        <h1 class="text-primary text-center">Online Tender Portal</h1>
+    </div>
+    <div class="card-group">
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuK75YqW5VYDtgVCprkL22W14r825NdG8QLg&s" class="card-img-top" alt="..." height="400px" width="300px">
+        <div class="card-body">
+          <h5 class="card-title">Tender System in India</h5>
+          <p class="card-text">In a significant stride towards efficiency and transparency, India announces a comprehensive modernization of its online tender system. </p>
+          <p class="card-text"><small class="text-body-secondary">On 27/05/2023</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://www.bhavesads.com/wp-content/uploads/2016/07/the-hindu-tender.jpg" class="card-img-top" alt="..." height="400px" width="300px">
+        <div class="card-body">
+          <h5 class="card-title">Enhanced Transparency</h5>
+          <p class="card-text">With features like real-time bid tracking, automated evaluation, and enhanced security measures, the new system promises to reduce bureaucracy, minimize corruption risks, and foster a level playing field for vendors. </p>
+          <p class="card-text"><small class="text-body-secondary">On 04/08/2022</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8l0hbt6Qa4IX8ogKQOVF-8K_l37b-7Rm76g&s" class="card-img-top" alt="..." height="400px" width="300px">
+        <div class="card-body">
+          <h5 class="card-title">Next-Gen Procurement</h5>
+          <p class="card-text">New AI-Powered Online Trend System Predicts Fashion Trends with Unprecedented Accuracy: A groundbreaking online trend system, powered by advanced artificial intelligence algorithms, is revolutionizing the fashion industry.</p>
+          <p class="card-text"><small class="text-body-secondary">On 11/06/2022</small></p>
+        </div>
+      </div>
+    </div>
+</main>
+<footer>
+  <p class="d-inline-flex gap-1 mt-4">
+    <div class="row gx-3">
+      <div class="col">
+        <button class="btn btn-primary ml-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+           Ongoing Tenders
+        </button>
+      </div>
+      <div class="col">
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="true" aria-controls="collapseExample">
+          Upcoming Tenders
+        </button>
+      </div>
+      <div class="col">
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+          News and Announcements
+        </button>
+      </div>
+    </div>
+  </p>
+  <div class="collapse" id="collapseExample1">
+    <div class="card card-body">
+      <a href="{% url 'login' %}" > <span class="badge text-bg-primary">New</span>Renovation of main office building Phase-2 at HQ NSG Palam || End date:02-06-2024</a>
+    </div>
+  </div>
+  <div class="collapse" id="collapseExample2">
+      <div class="card card-body">
+      <p><span class="badge text-bg-primary">New</span>	Procurement of Workstation</p>
+      <p><span class="badge text-bg-primary">New</span>	Drainage services</p> 
+      <p><span class="badge text-bg-primary">New</span>	Road construction / Building construction</p>
+      </div>
+  </div>
+  <div class="collapse" id="collapseExample3">
+    <div class="card card-body">
+      <p><span class="badge text-bg-primary">New</span> 30-Apr-2024	new [Information] The Faculty development Program on " Applications of Soft Computing in Civil Engineering" ,originally scheduled to be conducted during 6th-10th May,2024 by the Department of Civil Engineering stands postponed due to administrative reasons. The revised dates will be intimated very soon. </p>
+      <P>19-Apr-2024	new [Time Table] B.E. VIII Semester (Main/Suppl.) Practical Examinations for the academic year 2023-2024.</P>
+      <P>18-Apr-2024	new [Recruitment Notification-2024] Vasavi College of Engineering invites applications for the Faculty and Non-teaching Positions.</P>
+    </div>
+  </div>
+  <div class="container my-5">
+    </body>
+            <!-- Footer -->
+            <footer
+            class="text-center text-lg-start text-white"
+            style="background-color: #929fba"
+            >
+      <!-- Grid container -->
+      <div class="container">
+        <!-- Section: Links -->
+        <section class="">
+          <!--Grid row-->
+          <div class="row">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">
+                e-Tender
+              </h6>
+              <p>
+                online tender systems revolutionize the procurement landscape by offering a more efficient, transparent, and accessible way to conduct tendering processes, benefiting both buyers and suppliers alike.
+              </p>
+            </div>
+            <!-- Grid column -->
+  
+            <hr class="w-100 clearfix d-md-none" />
+  
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">Address</h6>
+              <p>
+                H No. 1-98/548<br>Langar Houz<br>Hyderabad 500004<br>India
+              </p>
+            </div>
+            <!-- Grid column -->
+  
+            <hr class="w-100 clearfix d-md-none" />
+  
+            <!-- Grid column -->
+            <hr class="w-100 clearfix d-md-none" />
+  
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+              <p><i class="fas fa-envelope mr-3"></i> etender@gmail.com</p>
+              <p><i class="fas fa-phone mr-3"></i> +91 7981911061</p>
+              <p><i class="fas fa-print mr-3"></i> +91 9951147011</p>
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+  
+              <!-- Facebook -->
+              <a
+                 class="btn btn-primary btn-floating m-1"
+                 style="background-color: #3b5998"
+                 href="#!"
+                 role="button"
+                 ><i class="fab fa-facebook-f"></i
+                ></a>
+  
+              <!-- Twitter -->
+              <a
+                 class="btn btn-primary btn-floating m-1"
+                 style="background-color: #55acee"
+                 href="#!"
+                 role="button"
+                 ><i class="fab fa-twitter"></i
+                ></a>
+  
+              <!-- Google -->
+              <a
+                 class="btn btn-primary btn-floating m-1"
+                 style="background-color: #dd4b39"
+                 href="#!"
+                 role="button"
+                 ><i class="fab fa-google"></i
+                ></a>
+  
+              <!-- Instagram -->
+              <a
+                 class="btn btn-primary btn-floating m-1"
+                 style="background-color: #ac2bac"
+                 href="#!"
+                 role="button"
+                 ><i class="fab fa-instagram"></i
+                ></a>
+  
+              <!-- Linkedin -->
+              <a
+                 class="btn btn-primary btn-floating m-1"
+                 style="background-color: #0082ca"
+                 href="#!"
+                 role="button"
+                 ><i class="fab fa-linkedin-in"></i
+                ></a>
+              <!-- Github -->
+              <a
+                 class="btn btn-primary btn-floating m-1"
+                 style="background-color: #333333"
+                 href="#!"
+                 role="button"
+                 ><i class="fab fa-github"></i
+                ></a>
+            </div>
+          </div>
+          <!--Grid row-->
+        </section>
+        <!-- Section: Links -->
+      </div>
+      <!-- Grid container -->
+  
+      <!-- Copyright -->
+      <div
+           class="text-center p-3"
+           style="background-color: rgba(0, 0, 0, 0.2)"
+           >
+        © 2024 Copyright:
+        <a class="text-white" href="#"
+           >e-tender India</a
+          >
+      </div>
+      <!-- Copyright -->
+    </footer>
+          
+            <!-- Footer -->
+          </div>
+          <!-- End of .container -->
+        </footer>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Page</title>
+</head>
+<body>
+    <h1>Tenders with Minimum Bid Amount:</h1>
+    <ul>
+        {% for tender in min_bid_tenders %}
+        <h3><li>{{ tender.tender_id }} -{{ tender.username }}- {{ tender.bid_amount }}</li></h3>
+        {% endfor %}
+    </ul>
+</body>
+</html>

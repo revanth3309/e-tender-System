@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <title>Admin Page</title>
+</head>
+<body>
+    <div class="container border-2">  
+        <a href="{% url 'home'  %}" class="btn btn-outline-primary mx-2 my-3">Home</a>
+        <a href="{% url 'find_min_bid_tender'  %}" class="btn btn-outline-primary mx-2 my-3">Show Results</a>
+        <div class="row">
+            {% for i in item %}
+            <div class="col-4">
+                <div class="card border-3" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Person details</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><b>Tender_id:</b>{{ i.tender_id }}</li>
+                        <li class="list-group-item"><b>Name:</b>{{ i.username }}</li>
+                        <li class="list-group-item"><b>organization:</b>{{ i.organization }}</li>
+                        <li class="list-group-item"><b>no.of tenders:</b>{{ i.num_tenders_done }}</li>
+                        <li class="list-group-item"><b>Licence_id:</b>{{ i.license_id }}</li>
+                        <li class="list-group-item"><b>bid_amount:</b>{{ i.bid_amount }}</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="{% url 'delete_item' item_id=i.id  %}" class="btn btn-outline-primary">Delete</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>    
+</body>
+</html>
